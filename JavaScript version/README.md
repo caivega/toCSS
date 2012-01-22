@@ -1,6 +1,6 @@
 # toCSS
 
-This module provides a function that converts an {Object} into valid and formatted CSS code presented by a string. <br
+This module provides a function that converts {Object} into valid and formatted CSS code presented by a string. <br
  />
 The resulting string can be added to an existing file.
 In addition, toCSS supports extended syntax including nested rules and minification for color notation:
