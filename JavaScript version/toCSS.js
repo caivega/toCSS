@@ -21,6 +21,21 @@ var toCSS = new function() {
 	var factory = {
 		data: {},
 
+		/*!
+		* The final conversion of the {object} into a string
+		* Original object:
+		* 'a b' : ['property: value;', ...]
+		*
+		* Output string:
+		* a b {
+		*	property: value;
+		*   ...
+		* }
+		*
+		* @param {object} Object
+		* @param {minify} Boolean
+		* @return {string} String
+		*/
 		build: function(object, minify) {
 			var rule = [];
 
@@ -53,7 +68,7 @@ var toCSS = new function() {
 		*
 		* @param {object} Object
 		* @param {rule} Array
-		* @return The result is stored in the {data} dict
+		* @return The result is stored in the {data} object
 		*/
 		parse: function(object, rule) {
 			var rule = rule || [];
@@ -141,11 +156,10 @@ var toCSS = new function() {
 
 	return function(object, minify) {
 		if(!factory.is(object))
-			throw new Error('There\s no any objects to parse!');
+			throw new Error('There\'re no any objects to parse!');
 
 		return factory.build(object, minify);
 	};
 };
 
-//Node.js export
 //exports.toCSS = toCSS;
