@@ -1,0 +1,18 @@
+html {  background: red;  } html body {  color: FFF;  } html body div > p {  color: green;   border: 000;  } input {  border: 1px solid 101;  } html {
+	background: red;
+
+}
+html body {
+	color: FFF;
+
+}
+html body div > p {
+	color: green;
+
+	border: 000;
+
+}
+input {
+	border: 1px solid 101;
+
+}
