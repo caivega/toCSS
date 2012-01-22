@@ -11,7 +11,7 @@ In addition, toCSS supports extended syntax including nested rules and minificat
 *For example you could use the following code:*
 
 
-- Server side: Node.js
+* Server side: Node.js
 
 
 	var fs = require("fs");
@@ -52,7 +52,7 @@ In addition, toCSS supports extended syntax including nested rules and minificat
 
 	exports.toCSS = toCSS;
 
-- Client side
+* Client side
 
 
 	var rules = toCSS({
