@@ -14,7 +14,7 @@ In addition, toCSS supports extended syntax including nested rules and minificat
 * Server side: Node.js
 
 
-	var fs = require("fs");
+	`var fs = require("fs");
 
 	var file = fs.createWriteStream('file.css', {
 		flags: 'a',
@@ -46,7 +46,7 @@ In addition, toCSS supports extended syntax including nested rules and minificat
 
 	file.end(function() {
 		console.log('Ok!');
-	});
+	});`
 
 *Then add the following line to the end of toCSS.js:*
 
