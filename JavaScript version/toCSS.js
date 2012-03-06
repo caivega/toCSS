@@ -1,20 +1,23 @@
 /*!
 * toCSS
-* This module provides a function that converts an {Object}
+* This module provides a function that converts {object}
 * into valid and formatted CSS code presented by a string.
-* In addition, toCSS supports extended syntax including nested rules
-* and minification for color notation:
-*   RGB notation into a HEX triplet
-*   Reducing the 6-digit HEX triplet up to 3-digit
+* The resulting string can be added to an existing file.
+* In addition, toCSS supports:
+*   - Extended syntax including nested rules
+*   - Minification for color notation:
+* 	    - RGB notation into a HEX triplet.
+* 	    - Reducing the 6-digit HEX triplet up to 3-digit
+*
 * @author: Alexander Guinness <monolithed@gmail.com>
-* @param {object} Object
-* @param {minify} bool
-* @return {string} string
-* @import ES5 [].map() and [].filter()
+* @param: {Object} object
+* @param: {Boolen} minify - Minification
+* @return: {string} string
 * @version: 1.0
-* @license MIT
+* @license: MIT
 * @date: Mon Feb 06 02:00:00 2012
 */
+
 var toCSS = new function() {
 	'use strict';
 
@@ -32,9 +35,9 @@ var toCSS = new function() {
 		*   ...
 		* }
 		*
-		* @param {object} Object
-		* @param {minify} Boolean
-		* @return {string} String
+		* @param: {Object} object
+		* @param: {Boolean} minify
+		* @return: {String} string
 		*/
 		build: function(object, minify) {
 			var rule = [];
@@ -56,9 +59,9 @@ var toCSS = new function() {
 		* Keys are collected in the 'CSS-rules' and properties are stored in a list.
 		*
 		* Original object:
-		* 'a' : {
-		* 	'b' : {
-		* 		'property': 'value',
+		* a : {
+		* 	b : {
+		* 		property: 'value',
 		*		...
 		* 	}
 		* }
@@ -66,9 +69,9 @@ var toCSS = new function() {
 		* Output object:
 		* 'a b' : ['property: value;', ...]
 		*
-		* @param {object} Object
-		* @param {rule} Array
-		* @return The result is stored in the {data} object
+		* @param: {Object} object
+		* @param: {Array} rule
+		* @return: The result is stored in the {data} object
 		*/
 		parse: function(object, rule) {
 			rule = rule || [];
@@ -86,8 +89,8 @@ var toCSS = new function() {
 			/*!
 			* This function is responsible for minimizing the CSS colors
 			* rgb (255, 255, 255) -> #FFFFFF - > #FFF
-			* @param {color} String
-			* @return {String}
+			* @param: {String} color
+			* @return: {String}
 			*/
 			init: function(color) {
 				return this.to_short_hex(this.rgb_to_hex(color))
@@ -96,8 +99,8 @@ var toCSS = new function() {
 			/*!
 			* Reduces the 6-digit HEX triplet up to 3-digit
 			* #110011 -> #101
-			* @param {text} String
-			* @return {String}
+			* @param: {String} text
+			* @return: {String}
 			*/
 			to_short_hex: function(text) {
 				return text.replace(/#([\da-fA-F]{6})\b/g, function() {
@@ -110,8 +113,8 @@ var toCSS = new function() {
 			/*!
 			* Convert RGB notation into a HEX triplet
 			* rgb (255, 255, 255) -> #FFFFFF
-			* @param {text} String
-			* @return {String}
+			* @param: {String} text
+			* @return: {String}
 			*/
 			rgb_to_hex: function(text) {
 				var match = text.match(/rgb\s*\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)/);
@@ -135,8 +138,8 @@ var toCSS = new function() {
 		* Output string:
 		* a { property: value; }
 		*
-		* @param {text} String
-		* @return {String}
+		* @param: {String} text
+		* @return: {String}
 		*/
 		minify: function(text) {
 			return text.replace(/[\n\t]|\s{2,}/g, ' ');
@@ -144,8 +147,8 @@ var toCSS = new function() {
 
 		/*!
 		* Compares the object type
-		* @param {object} Object
-		* @return {Boolean}
+		* @param: {Object} object
+		* @return: {Boolean}
 		*/
 		is: function (object) {
 			return Object.prototype.toString.call(object) === '[object Object]';
