@@ -29,18 +29,18 @@ In addition, toCSS supports:
 
 	file.write(
 		require('./toCSS.js').toCSS({
-			'html': {
-				'background': 'red',
-				'body': {
-					'color' : 'rgb(255, 255, 255)',
+			html: {
+				background: 'red',
+				body: {
+					color : 'rgb(255, 255, 255)',
 					'div > p': {
-						'color': 'green',
-						'border': '#000008'
+						color: 'green',
+						border: '#000008'
 					}
 				}
 			},
-			'input' : {
-				'border' : '1px solid #110011'
+			input : {
+				border : '1px solid #110011'
 			}
 		})
 	);
@@ -57,18 +57,18 @@ In addition, toCSS supports:
 
 
 	var rules = toCSS({
-		'html': {
-			'background': 'red',
-			'body': {
-				'color' : 'rgb(255, 255, 255)',
+		html: {
+			background: 'red',
+			body: {
+				color : 'rgb(255, 255, 255)',
 				'div > p': {
-					'color': 'green',
-					'border': '#000008'
+					color: 'green',
+					border: '#000008'
 				}
 			}
 		},
-		'input' : {
-			'border' : '1px solid #110011'
+		input: {
+			border : '1px solid #110011'
 		}
 	});
 

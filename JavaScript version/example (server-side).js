@@ -2,18 +2,18 @@ var fs = require("fs");
 var to = require('./toCSS.js');
 
 var object = {
-	'html': {
-	'background': 'red',
-		'body': {
-		'color' : 'rgb(255, 255, 255)',
+	html: {
+		background: 'red',
+		body: {
+			color: 'rgb(255, 255, 255)',
 			'div > p': {
-			'color': 'green',
-				'border': '#000008'
+				color: 'green',
+				border: '#000008'
 			}
 		}
 	},
-	'input' : {
-		'border' : '1px solid #110011'
+	input : {
+		border : '1px solid #110011'
 	}
 }
 
