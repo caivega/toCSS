@@ -43,7 +43,7 @@ var toCSS = new function() {
 
 			for (var i in this.data) {
 				if (this.data[i].length)
-					rule.push(i, '{\n', this.data[i].join(''), '}\n');
+					rule.push(i, '{\n', this.data[i].join(''), '}\n\n');
 			}
 
 			rule = rule.join('');
@@ -71,16 +71,14 @@ var toCSS = new function() {
 		* @return The result is stored in the {data} object
 		*/
 		parse: function(object, rule) {
-			var rule = rule || [];
-
-			if (rule)
-				this.data[rule] = [];
+			rule = rule || [];
+			this.data[rule] = [];
 
 			for (var i in object) {
 				if (this.is(object[i]))
 					this.parse(object[i], rule + i + ' ');
 				else
-					this.data[rule].push('\t' + i + ': ' + this.format_colors.init(object[i]) + ';\n\n');
+					this.data[rule].push('\t' + i + ': ' + this.format_colors.init(object[i]) + ';\n');
 			}
 		},
 
@@ -162,4 +160,4 @@ var toCSS = new function() {
 	};
 };
 
-//exports.toCSS = toCSS;
+exports.toCSS = toCSS;
