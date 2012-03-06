@@ -5,7 +5,7 @@ The resulting string can be added to an existing file. <br />
 In addition, toCSS supports:
 
 * Extended syntax including nested rules
-* Mminification for color notation:
+* Minification for color notation:
 	* RGB notation into a HEX triplet.
 	* Reducing the 6-digit HEX triplet up to 3-digit
 

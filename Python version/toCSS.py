@@ -1,21 +1,24 @@
 """
 - toCSS
-- This module provides a function that converts a {dict}
+- This module provides a function that converts {dict}
 - into valid and formatted CSS code presented by a string.
-- In addition, toCSS supports extended syntax including nested rules
-- and minification for color notation:
--   RGB notation into a HEX triplet
--   Reducing the 6-digit HEX triplet up to 3-digit
+- The resulting string can be added to an existing file.
+- In addition, toCSS supports:
+-   * Extended syntax including nested rules
+-   * Minification for color notation:
+- 	    * RGB notation into a HEX triplet.
+- 	    * Reducing the 6-digit HEX triplet up to 3-digit
+-
+- string toCSS (dict object [, bool minify = False])
+-
 - @author: Alexander Guinness <monolithed@gmail.com>
-- @param {data} dict
-- @param {minify} bool
-- @return {string} string
-- @import re
+- @param: {Object} object
+- @param: {Boolen} minify - Minification
+- @return: {string} string
 - @version: 1.0
-- @license MIT
-- @date: Fri Jan 06 02:00:00 2012
+- @license: MIT
+- @date: Mon Feb 06 02:00:00 2012
 """
-
 __all__ = ["toCSS"]
 
 import re
