@@ -120,7 +120,7 @@ toCSS = new ->
 		- @return: {Boolean}
 		###
 		is: (object) ->
-			Object.prototype.toString.call(object) is '[object Object]'
+			Object::toString.call(object) is '[object Object]'
 
 		###
 		- Minification
