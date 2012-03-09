@@ -49,24 +49,24 @@ file.end ->
 *Result:*
 
 ```css
-	#file.css:
+#file.css:
 
-	html {
-		background: red;
-	}
+html {
+	background: red;
+}
 
-	html body {
-		color: #FFF;
-	}
+html body {
+	color: #FFF;
+}
 
-	html body div > p {
-		color: green;
-		border: #000008;
-	}
+html body div > p {
+	color: green;
+	border: #000008;
+}
 
-	input {
-		border: #101;
-	}
+input {
+	border: #101;
+}
 ```
 
 * License
