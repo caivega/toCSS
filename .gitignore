@@ -1,0 +1,13 @@
+# Ignore rules
+
+*.css
+*.o
+*.pyc
+*.a
+*~
+\#*
+*.log
+*.tmp
+*.bak
+a.out
+*.out

@@ -6,8 +6,8 @@ In addition, toCSS supports:
 
 * Extended syntax including nested rules
 * Minification for color notation:
-	* RGB notation into a HEX triplet.
-	* Reducing the 6-digit HEX triplet up to 3-digit
+    * RGB notation into a HEX triplet.
+    * Reducing the 6-digit HEX triplet up to 3-digit
 
 ##Synopsis
 
@@ -62,21 +62,21 @@ Then you will get a file named *print_r.pyc* and place the one in your installat
 from toCSS import *
 
 with open('file.css', 'a', encoding='utf-8') as file:
-	file.write(toCSS({
-		'html': {
-			'background': 'red',
-			'body': {
-				'color' : 'rgb(255, 255, 255)',
-				'div > p': {
-					'color': 'green',
-					'border': '#000008'
-				}
-			}
-		},
-		'input' : {
-			'border' : '1px solid #110011'
-		}
-	}))
+    file.write(toCSS({
+        'html': {
+            'background': 'red',
+            'body': {
+                'color' : 'rgb(255, 255, 255)',
+                'div > p': {
+                    'color': 'green',
+                    'border': '#000008'
+                }
+            }
+        },
+        'input' : {
+            'border' : '1px solid #110011'
+        }
+    }))
 ```
 
 *Result:*
@@ -85,20 +85,20 @@ with open('file.css', 'a', encoding='utf-8') as file:
 #file.css:
 
 html {
-	background: red;
+    background: red;
 }
 
 html body {
-	color: #FFF;
+    color: #FFF;
 }
 
 html body div > p {
-	color: green;
-	border: #000008;
+    color: green;
+    border: #000008;
 }
 
 input {
-	border: #101;
+    border: #101;
 }
 ```
 
