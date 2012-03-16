@@ -45,6 +45,7 @@ file.write to.toCSS object
 file.end ->
     console.log to.toCSS object
 ```
+
 *Result:*
 
 ```css
