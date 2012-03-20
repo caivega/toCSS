@@ -54,7 +54,7 @@ file.write(
 
 file.end(function() {
     console.log('Ok!');
-});`
+});
 ```
 
 *Then add the following line to the end of toCSS.js:*
