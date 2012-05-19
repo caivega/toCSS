@@ -97,7 +97,7 @@ toCSS = new ->
 			###
 			to_short_hex: (text) ->
 				text.replace /#([\da-fA-F]{6})\b/g, ->
-					RegExp.$1.split('').filter((element, i) -> i % 2 is i++ % 2 and i % 2).join ''
+					'#' + RegExp.$1.split('').filter((element, i) -> i % 2 is i++ % 2 and i % 2).join ''
 
 			###
 			- Convert RGB notation into a HEX triplet
