@@ -87,7 +87,7 @@ toCSS = new ->
 			- @return: {String}
 			###
 			init: (color) ->
-				@to_short_hex(@rgb_to_hex(color))
+				@to_short_hex @rgb_to_hex color
 
 			###
 			- Reduces the 6-digit HEX triplet up to 3-digit
@@ -118,11 +118,10 @@ toCSS = new ->
 			- @return: {String}
 			###
 			rgb_to_hex: (text) ->
-				match = text.match(/rgb\s*\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)/);
+				match = text.match /rgb\s*\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)/
 
-				return '#' + match.map((element, i) ->
-					i and (if !element[1] then 0 else '') + (element|0).toString(16) or ''
-				)
+				return '#' + match.map (element, i) ->
+					i and (if !element[1] then 0 else '') + (element | 0).toString(16) or ''
 				.join('').toUpperCase() if match
 
 				return text
@@ -152,7 +151,7 @@ toCSS = new ->
 
 	(object, minify) ->
 		if !factory.is object
-			throw new Error('There\'re no any objects to parse!')
-		factory.build(object, minify)
+			throw new Error 'There\'re no any objects to parse!'
+		factory.build object, minify
 
 exports.toCSS = toCSS;
