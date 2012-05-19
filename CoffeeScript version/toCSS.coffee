@@ -77,7 +77,7 @@ toCSS = new ->
 				if @is value
 					@parse value, "#{rule}#{key} "
 				else
-					this.data[rule].push "\t #{key}: #{@format_colors.init(value)};\n"
+					@data[rule].push "\t #{key}: #{@format_colors.init(value)};\n"
 
 		format_colors:
 			###
@@ -105,7 +105,7 @@ toCSS = new ->
 					hex = match[1]
 
 					'#' + hex.split('').filter (element, index) ->
-						hex[index] if (if diff then ++index else index) % 2
+						hex[index] if (diff and ++index or index) % 2
 					.join ''
 
 				return if slice(1) is slice 0 then slice 1 else text
@@ -120,7 +120,7 @@ toCSS = new ->
 				match = text.match /rgb\s*\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)/
 
 				return '#' + match.map (element, i) ->
-					i and (if !element[1] then 0 else '') + (element | 0).toString(16) or ''
+					i and (!element[1] and 0 or '') + (element | 0).toString(16) or ''
 				.join('').toUpperCase() if match
 
 				return text
