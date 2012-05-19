@@ -103,12 +103,22 @@ var toCSS = new function() {
 			* @return: {String}
 			*/
 			to_short_hex: function(text) {
-				return text.replace(/#([\da-fA-F]{6})\b/g, function() {
-					return '#' + RegExp.$1.split('').filter(function(element, i) {
-						return i % 2 == i++ % 2 && i % 2;
+				var match = text.match(/#([\da-fA-F]{6})\b/);
+
+				if (!match)
+					return text;
+
+				var slice = function(diff) {
+					var hex = match[1];
+
+					return '#' + hex.split('').filter(function(element, index) {
+						if ((diff ? ++index : index) % 2)
+							return hex[index];
 					}).join('');
-				});
-			},
+				};
+
+				return slice(1) === slice(0) ? slice(1) : text;
+ 			},
 
 			/*!
 			* Convert RGB notation into a HEX triplet
