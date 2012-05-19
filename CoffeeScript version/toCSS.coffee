@@ -96,8 +96,20 @@ toCSS = new ->
 			- @return: {String}
 			###
 			to_short_hex: (text) ->
-				text.replace /#([\da-fA-F]{6})\b/g, ->
-					'#' + RegExp.$1.split('').filter((element, i) -> i % 2 is i++ % 2 and i % 2).join ''
+				match = text.match /#([\da-fA-F]{6})\b/
+
+				if !match
+					return text
+
+				slice = (diff) ->
+					hex = match[1]
+
+					'#' + hex.split('').filter (element, index) ->
+						if (if diff then ++index else index) % 2
+							hex[index]
+					.join ''
+
+				return if slice(1) is slice 0 then slice 1 else text
 
 			###
 			- Convert RGB notation into a HEX triplet
