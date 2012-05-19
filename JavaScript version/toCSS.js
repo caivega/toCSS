@@ -104,7 +104,7 @@ var toCSS = new function() {
 			*/
 			to_short_hex: function(text) {
 				return text.replace(/#([\da-fA-F]{6})\b/g, function() {
-					return RegExp.$1.split('').filter(function(element, i) {
+					return '#' + RegExp.$1.split('').filter(function(element, i) {
 						return i % 2 == i++ % 2 && i % 2;
 					}).join('');
 				});
