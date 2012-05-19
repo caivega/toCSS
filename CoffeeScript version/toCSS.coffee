@@ -105,8 +105,7 @@ toCSS = new ->
 					hex = match[1]
 
 					'#' + hex.split('').filter (element, index) ->
-						if (if diff then ++index else index) % 2
-							hex[index]
+						hex[index] if (if diff then ++index else index) % 2
 					.join ''
 
 				return if slice(1) is slice 0 then slice 1 else text
