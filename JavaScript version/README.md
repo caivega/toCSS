@@ -112,7 +112,7 @@ html body div > p {
 }
 
 input {
-    border: #101;
+    border: 1px solid #101;
 }
 ```
 
